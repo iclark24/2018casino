@@ -13,9 +13,6 @@ require 'pry'
 
 class Coin_toss
   attr_accessor :user
-  def initialize
-    puts user.name
-
   def initialize(user)
 
     @user = user
@@ -25,33 +22,33 @@ class Coin_toss
     heads_tails
   end 
 
-def heads_tails
+  def heads_tails
 
-  puts "Welcome to Heads or Tails!"
-  puts "How much would you like to bet?"
-  @bets = gets.to_i 
-  @wallet = @wallet - @bets
-  puts "You are betting #{@bets}"
-  # gets pull from wallet script that gets a value from the user subtracts that value from the wallet
-  # then runs the rest of the script if lose nothing happens if win they get bet *2 another vaiable caclled bet and add to wallet
-  puts "Would you like heads or tails? Type 1 for heads 2 for tails."
-    choice = gets.to_i
-  # @coin_flip.sample
-  if choice == @coin_flip.sample
-    puts "You have won!!" 
-    @wallet = (@bets * 2) + @wallet 
-    puts @wallet
-    new_game
-  else
-    puts "You lost"
+    puts "Welcome to Heads or Tails!"
+    puts "How much would you like to bet?"
+    @bets = gets.to_i 
+    @wallet = @wallet - @bets
+    puts "You are betting #{@bets}"
+    # gets pull from wallet script that gets a value from the user subtracts that value from the wallet
+    # then runs the rest of the script if lose nothing happens if win they get bet *2 another vaiable caclled bet and add to wallet
+    puts "Would you like heads or tails? Type 1 for heads 2 for tails."
+      choice = gets.to_i
+    # @coin_flip.sample
+    if choice == @coin_flip.sample
+      puts "You have won!!" 
+      @wallet = (@bets * 2) + @wallet 
+      puts @wallet
+      new_game
+    else
+      puts "You lost"
 
-    new_game
+      new_game
+    end
+
   end
 
-end
-end
 
-def new_game
+  def new_game
    puts "Would you like to play again?"
    puts "1) Yes"
    puts "2) No"

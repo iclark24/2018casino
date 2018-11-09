@@ -1,29 +1,37 @@
+def startup
+  puts "Please Enter Your Name:"
+  name = gets.chomp
+  puts "Please Enter Your Age:"
+  age = gets.chomp.to_i
+  if age < 21 
+    puts("You ain't 21! Get out of here!")
+  else
+    puts "Please Enter Your Cash Total:"
+    funds = gets.chomp.to_i
+    user = Createuser.new(name, age, funds)
+    Casino.new(user)
+  end
+
+end
+
+
 class Createuser
   attr_accessor :name, :age, :funds
-  def initialize
-    puts "Please Enter Your Name:"
-    name = gets.chomp
-    puts "Please Enter Your Age:"
-    age = gets.chomp.to_i
-    if age < 21 
-      puts("You ain't 21! Get out of here!")
-    else
-      puts "Please Enter Your Cash Total:"
-      funds = gets.chomp.to_i
-    end
-
-    Casino.new(name, age, funds)
+  def initialize(name, age, funds)
+    @name = name
+    @age = age
+    @funds = funds
   end
 end
 
 class Casino
 
-  attr_accessor :name, :age, :funds
-  def initialize(name, age, funds)
-    mainmenu(name, age, funds)
+  attr_accessor :user
+  def initialize(user)
+    mainmenu(user)
   end
 
-  def mainmenu(name, age, funds)
+  def mainmenu(user)
     puts "---Main Menu---"
     puts "~~~~~~~~~~~~~~~"
     puts "1) Gameone"
@@ -61,4 +69,4 @@ class Casino
   end
 end
 
-Createuser.new
+startup

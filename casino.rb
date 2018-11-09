@@ -1,3 +1,5 @@
+load './headstails.rb'
+
 def startup
   puts "Please Enter Your Name:"
   name = gets.chomp
@@ -9,7 +11,8 @@ def startup
     puts "Please Enter Your Cash Total:"
     funds = gets.chomp.to_i
     user = Createuser.new(name, age, funds)
-    Casino.new(user)
+    casinouser = Casino.new(user)
+    casinouser.mainmenu(user)
   end
 
 end
@@ -28,10 +31,12 @@ class Casino
 
   attr_accessor :user
   def initialize(user)
-    mainmenu(user)
+
+    @user = user
   end
 
   def mainmenu(user)
+    puts user.funds
     puts "---Main Menu---"
     puts "~~~~~~~~~~~~~~~"
     puts "1) Gameone"
@@ -52,7 +57,8 @@ class Casino
     else
       case choice.to_i
       when 1
-        gameone
+
+        Coin_toss.new(user)
       when 2
         gametwo
       when 3

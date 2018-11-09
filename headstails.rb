@@ -12,11 +12,16 @@
 require 'pry'
 
 class Coin_toss
-
+  attr_accessor :user
   def initialize
+    puts user.name
+
+  def initialize(user)
+
+    @user = user
     @coin_flip = [1, 2]
     @bets = 0
-    @wallet = 300
+    @wallet = user.funds
     heads_tails
   end 
 
@@ -44,6 +49,7 @@ def heads_tails
   end
 
 end
+end
 
 def new_game
    puts "Would you like to play again?"
@@ -58,4 +64,4 @@ def new_game
   end
 end
 
-Coin_toss.new
+

@@ -16,11 +16,12 @@ class Coin_toss
   def initialize
     @coin_flip = [1, 2]
     @bets = 0
+    @wallet = 300
     heads_tails
   end 
 
 def heads_tails
-  @wallet = 300
+
   puts "Welcome to Heads or Tails!"
   puts "How much would you like to bet?"
   @bets = gets.to_i 

@@ -18,7 +18,6 @@ class Coin_toss
     @user = user
     @coin_flip = [1, 2]
     @bets = 0
-    @wallet = user.funds
     heads_tails
   end 
 
@@ -27,20 +26,21 @@ class Coin_toss
     puts "Welcome to Heads or Tails!"
     puts "How much would you like to bet?"
     @bets = gets.to_i 
-    @wallet = @wallet - @bets
+    user.funds = user.funds - @bets
     puts "You are betting #{@bets}"
-    # gets pull from wallet script that gets a value from the user subtracts that value from the wallet
-    # then runs the rest of the script if lose nothing happens if win they get bet *2 another vaiable caclled bet and add to wallet
+    # gets pull fromuser.funds script that gets a value from the user subtracts that value from theuser.funds
+    # then runs the rest of the script if lose nothing happens if win they get bet *2 another vaiable caclled bet and add touser.funds
     puts "Would you like heads or tails? Type 1 for heads 2 for tails."
       choice = gets.to_i
     # @coin_flip.sample
     if choice == @coin_flip.sample
       puts "You have won!!" 
-      @wallet = (@bets * 2) + @wallet 
-      puts @wallet
+      user.funds = (@bets * 2) + user.funds 
+      puts user.funds
       new_game
     else
       puts "You lost"
+      puts user.funds
 
       new_game
     end

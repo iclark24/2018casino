@@ -1,4 +1,4 @@
-load './headstails.rb'
+load './headstails.rb', './slotgame.rb'
 
 def startup
   puts "Please Enter Your Name:"
@@ -57,8 +57,8 @@ class Casino
     else
       case choice.to_i
       when 1
-
         Coin_toss.new(user)
+        mainmenu(user)
       when 2
         mainmenu(user)
       when 3

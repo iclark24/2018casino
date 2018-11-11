@@ -1,4 +1,3 @@
-
 class Coin_toss
   attr_accessor :user
   def initialize(user)
@@ -45,7 +44,7 @@ def new_game(user)
     heads_tails(user)
    when 2
     puts "You have ended with #{user.funds}"
-    mainmenu(user)
+    user
    end
   end
 end

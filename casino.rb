@@ -39,8 +39,8 @@ class Casino
     puts user.funds
     puts "---Main Menu---"
     puts "~~~~~~~~~~~~~~~"
-    puts "1) Gameone"
-    puts "2) Gametwo"
+    puts "1) Heads or Tails"
+    puts "2) Place holder for Rock, Paper, Scissors (not running yet"
     puts "3) Gamethree"
     puts "4) Gamefour"
     puts "~~~~~~~~~~~~~~~"
@@ -60,11 +60,11 @@ class Casino
 
         Coin_toss.new(user)
       when 2
-        gametwo
+        mainmenu(user)
       when 3
-        gamethree
+        mainmenu(user)
       when 4
-        gamefour
+        mainmenu(user)
       else
         puts ""
         puts "Please enter a valid option"

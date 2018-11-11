@@ -40,11 +40,12 @@ def new_game(user)
    puts "1) Yes"
    puts "2) No"
    choice = gets.chomp.to_i
-   if 1
+   case choice
+   when 1
     heads_tails(user)
-   elsif  2
+   when 2
     puts "You have ended with #{user.funds}"
-    casinouser.mainmenu(user)
+    mainmenu(user)
    end
   end
 end

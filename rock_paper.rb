@@ -1,11 +1,25 @@
-$player_count = 0
-$dealer_count = 0
+class Rock_paper
+  attr_accessor
+  def initialize
 
-what_to_include = %w{r p s}
+    #@user = user
+    @paper = "p"
+    @rock = "r"
+    @scissors = "s"
+    @bets = 0
+    #@wallet = user.funds
+    @wallet = 300
+    rock_paper
+  end
+  
 
-paper = "p"
-rock = "r"
-scissors = "s"
+  def rock_paper
+  
+
+    $player_count = 0
+    $dealer_count = 0
+
+    what_to_include = %w{r p s}
 
 def dealer_input
   dealer = rand(3)
@@ -79,3 +93,4 @@ player_input = gets.chomp.downcase
     break
   end
 end
+Rock_paper.new

@@ -72,5 +72,8 @@ end
 
 end
 
+<<<<<<< HEAD
 
 Slot_game.new
+=======
+>>>>>>> 4e96e1f863f8fb557900df3417c431bb1138bd29

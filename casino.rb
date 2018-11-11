@@ -1,4 +1,5 @@
-load './headstails.rb', './slotgame.rb'
+load './headstails.rb'
+load './slotgame.rb'
 
 def startup
   puts "Please Enter Your Name:"
@@ -40,7 +41,7 @@ class Casino
     puts "---Main Menu---"
     puts "~~~~~~~~~~~~~~~"
     puts "1) Heads or Tails"
-    puts "2) Place holder for Rock, Paper, Scissors (not running yet"
+    puts "2) Slots"
     puts "3) Gamethree"
     puts "4) Gamefour"
     puts "~~~~~~~~~~~~~~~"
@@ -60,6 +61,7 @@ class Casino
         Coin_toss.new(user)
         mainmenu(user)
       when 2
+        Slot_game.new(user)
         mainmenu(user)
       when 3
         mainmenu(user)

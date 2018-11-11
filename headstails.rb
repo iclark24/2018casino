@@ -4,7 +4,6 @@ class Coin_toss
   def initialize
     @coin_flip = [1, 2]
     @bets = 0
-<<<<<<< HEAD
     heads_tails
   end 
 
@@ -32,32 +31,6 @@ class Coin_toss
       new_game
     end
 
-=======
-    @wallet = 300
-    heads_tails
-  end 
-
-def heads_tails
-
-  puts "Welcome to Heads or Tails!"
-  puts "\n"
-  puts "How much would you like to bet?"
-  @bets = gets.to_i 
-  @wallet = @wallet - @bets
-  puts "You are betting #{@bets}"
-  puts "\n"
-  puts "Would you like heads or tails? Type 1 for Heads 2 for Tails."
-    choice = gets.to_i
-  if choice == @coin_flip.sample
-    puts "You have won!!" 
-    @wallet = (@bets * 2) + @wallet 
-    puts @wallet
-    new_game
-  else
-    puts "You lost"
-
-    new_game
->>>>>>> add to headstails and create slot game
   end
 
 end
@@ -75,5 +48,3 @@ def new_game
    end
   end
 end
-
-Coin_toss.new

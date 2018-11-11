@@ -1,5 +1,7 @@
 
 class Slot_game
+  # attr_accessor :user
+  # def initialize(user)
 
 def initialize
   @slot_images = ["Cherry","Orange", "Melon"]
@@ -23,7 +25,8 @@ end
     puts "\n"
     puts "How much would you like to bet?"
     @bets = gets.to_i 
-    @wallet = @wallet - @bets
+    user.funds = user.funds - @bets
+    #@wallet = @wallet - @bets
     puts "You are betting $#{@bets}"
     puts "\n"
     puts "Press 1 to pull the handle!"

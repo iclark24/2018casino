@@ -1,13 +1,15 @@
 
 class Coin_toss
-
-  def initialize
+  attr_accessor :user
+  def initialize(user)
     @coin_flip = [1, 2]
     @bets = 0
-    heads_tails
+    user = user
+    heads_tails(user)
+    
   end 
 
-  def heads_tails
+  def heads_tails(user)
 
     puts "Welcome to Heads or Tails!"
     puts "How much would you like to bet?"
@@ -23,27 +25,25 @@ class Coin_toss
       puts "You have won!!" 
       user.funds = (@bets * 2) + user.funds 
       puts user.funds
-      new_game
+      new_game(user)
     else
       puts "You lost"
       puts user.funds
 
-      new_game
+      new_game(user)
     end
 
   end
 
-end
-
-def new_game
+def new_game(user)
    puts "Would you like to play again?"
    puts "1) Yes"
    puts "2) No"
-   choice = gets.to_i
+   choice = gets.chomp.to_i
    if 1
-    heads_tails
+    heads_tails(user)
    elsif  2
-    puts "You have ended with #{@wallet}"
+    puts "You have ended with #{user.funds}"
     casinouser.mainmenu(user)
    end
   end

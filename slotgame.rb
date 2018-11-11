@@ -33,14 +33,14 @@ end
     puts "Press 1 to pull the handle!"
     choice = gets.to_i
     if choice == 1
-      run_slots
+      run_slots(user)
     elsif
       puts "Invalid Input Try Again"
-      make_bet
+      make_bet(user)
     end
   end
 
-  def run_slots
+  def run_slots(user)
     slot_image_1 = @slot_images.shuffle.first
     slot_image_2 = @slot_images.shuffle.first
     slot_image_3 = @slot_images.shuffle.first
@@ -51,25 +51,25 @@ end
         puts "\n"
         puts "You have won $#{winnings}"
         puts "\n"
-        game_end
+        game_end(user)
   end
 
-  def game_end
+  def game_end(user)
     puts "Would you like to play again?"
     puts "1) Yes"
     puts "2) Exit"
     choice = gets.to_i
     if choice == 1
-      make_bet
-    if choice == 2
+      make_bet(user)
+    elsif choice == 2
       puts "You have ended with $#{user.funds}!"
       user
-    elsif 
+    else 
       puts "Invalid entry. Please try again."
-      game_end
+      game_end(user)
     end
+    
   end
-end
 
 end
 

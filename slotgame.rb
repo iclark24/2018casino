@@ -6,8 +6,9 @@ class Slot_game
 def initialize(user)
   @slot_images = ["Cherry","Orange", "Melon"]
   @bets = 0
-  @wallet = 300
-  make_bet
+  # @wallet = 300
+  user = user
+  make_bet(user)
 end
 
 def compute(s1, s2, s3)
@@ -20,7 +21,7 @@ def compute(s1, s2, s3)
   end
 end
 
-  def make_bet
+  def make_bet(user)
     puts "Welcome to slots!"
     puts "\n"
     puts "How much would you like to bet?"
@@ -61,7 +62,7 @@ end
     if choice == 1
       make_bet
     if choice == 2
-      puts "You have ended with $#{@wallet}!"
+      puts "You have ended with $#{user.funds}!"
       user
     elsif 
       puts "Invalid entry. Please try again."

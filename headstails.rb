@@ -1,23 +1,10 @@
 
-
-
-# puts "You are flipping a coin"
-# if rand.round == 0
-#   coin = "heads"
-# else
-#   coin = "tails"
-# end
-# puts "It is " + coin
-
-require 'pry'
-
 class Coin_toss
-  attr_accessor :user
-  def initialize(user)
 
-    @user = user
+  def initialize
     @coin_flip = [1, 2]
     @bets = 0
+<<<<<<< HEAD
     heads_tails
   end 
 
@@ -45,20 +32,48 @@ class Coin_toss
       new_game
     end
 
+=======
+    @wallet = 300
+    heads_tails
+  end 
+
+def heads_tails
+
+  puts "Welcome to Heads or Tails!"
+  puts "\n"
+  puts "How much would you like to bet?"
+  @bets = gets.to_i 
+  @wallet = @wallet - @bets
+  puts "You are betting #{@bets}"
+  puts "\n"
+  puts "Would you like heads or tails? Type 1 for Heads 2 for Tails."
+    choice = gets.to_i
+  if choice == @coin_flip.sample
+    puts "You have won!!" 
+    @wallet = (@bets * 2) + @wallet 
+    puts @wallet
+    new_game
+  else
+    puts "You lost"
+
+    new_game
+>>>>>>> add to headstails and create slot game
   end
 
+end
 
-  def new_game
+def new_game
    puts "Would you like to play again?"
    puts "1) Yes"
    puts "2) No"
    choice = gets.to_i
    if 1
     heads_tails
-   elsif 2
-    # mainmenu
+   elsif  2
+    puts "You have ended with #{@wallet}"
+    casinouser.mainmenu(user)
    end
   end
 end
 
-
+Coin_toss.new

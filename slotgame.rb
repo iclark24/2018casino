@@ -1,9 +1,9 @@
 
 class Slot_game
-  # attr_accessor :user
-  # def initialize(user)
+  attr_accessor :user
+  
 
-def initialize
+def initialize(user)
   @slot_images = ["Cherry","Orange", "Melon"]
   @bets = 0
   @wallet = 300
@@ -11,7 +11,7 @@ def initialize
 end
 
 def compute(s1, s2, s3)
-  if s1==s2 && s2==s3
+  if s1==s2 && s2==s3 
     3
   elsif s1==s2 || s2==s3 || s1==s3
     2
@@ -62,7 +62,7 @@ end
       make_bet
     if choice == 2
       puts "You have ended with $#{@wallet}!"
-      casinouser.mainmenu(user)
+      user
     elsif 
       puts "Invalid entry. Please try again."
       game_end
@@ -71,5 +71,6 @@ end
 end
 
 end
+
 
 Slot_game.new

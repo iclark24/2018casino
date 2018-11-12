@@ -71,7 +71,7 @@ class Casino
         puts ""
         puts "Please enter a valid option"
         puts ""
-        mainmenu
+        mainmenu(user)
       end
     end
   end

@@ -7,6 +7,7 @@ class Roulette
     makeoptions
     tableimage
     roulettestart(user)
+  end
 
   class Tableitem
     attr_accessor :name, :color, :multiplyer
@@ -17,7 +18,7 @@ class Roulette
     end
   end
 
-  def makeoptions(user)
+  def makeoptions()
     @zero = Tableitem.new("0","green", 36)
     @doublezero = Tableitem.new("00","green", 36)
     @one = Tableitem.new("1","red", 36)
@@ -69,21 +70,24 @@ class Roulette
     @firsthalf = Tableitem.new("1-18","group", 2)
     @secondhalf = Tableitem.new("19-36","group", 2)
 
-    startup(user)
   end
   
   def tableimage
     puts "     ________________________________________________________"
     puts "    |         1st Half         |           2nd Half          |"
-    puts "    |--------------------------------------------------------:---------:"
-    puts " /--| 3 | 6 | 9 | 12 | 15 | 18 | 21 | 24 | 27 | 30 | 33 | 36 | 3rd Row |"
+    puts "    |--------------------------------------------------------|---------."
+    puts " .--| 3 | 6 | 9 | 12 | 15 | 18 | 21 | 24 | 27 | 30 | 33 | 36 | 3rd Row |"
     puts "| 0 |--------------------------------------------------------|---------|"
     puts " >--| 2 | 5 | 8 | 11 | 14 | 17 | 20 | 23 | 26 | 29 | 32 | 35 | 2nd Row |"
     puts "| 00|--------------------------------------------------------|---------|"
-    puts " \--| 1 | 4 | 7 | 10 | 13 | 16 | 19 | 22 | 25 | 28 | 31 | 34 | 1st Row |"
-    puts "    '--------------------------------------------------------'---------|"
+    puts " '--| 1 | 4 | 7 | 10 | 13 | 16 | 19 | 22 | 25 | 28 | 31 | 34 | 1st Row |"
+    puts "    |--------------------------------------------------------|---------'"
     puts "    |    1st Dozen   |     2nd Dozen     |     3rd Dozen     |"
-    puts "         |--------------------------------------------------"
+    puts "    '------------.---'-------------------:-------.-----------'"
     puts "                 |  Even |  Odd  |  Red  | Black |"
     puts "                 '-------------------------------'"
   end
+
+end
+
+Roulette.new("frank")

@@ -1,4 +1,5 @@
 load './headstails.rb'
+load './slotgame.rb'
 
 def startup
   puts "Please Enter Your Name:"
@@ -39,8 +40,8 @@ class Casino
     puts user.funds
     puts "---Main Menu---"
     puts "~~~~~~~~~~~~~~~"
-    puts "1) Gameone"
-    puts "2) Gametwo"
+    puts "1) Heads or Tails"
+    puts "2) Slots"
     puts "3) Gamethree"
     puts "4) Gamefour"
     puts "~~~~~~~~~~~~~~~"
@@ -57,14 +58,15 @@ class Casino
     else
       case choice.to_i
       when 1
-
         Coin_toss.new(user)
+        mainmenu(user)
       when 2
-        gametwo
+        Slot_game.new(user)
+        mainmenu(user)
       when 3
-        gamethree
+        mainmenu(user)
       when 4
-        gamefour
+        mainmenu(user)
       else
         puts ""
         puts "Please enter a valid option"

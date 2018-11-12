@@ -42,19 +42,23 @@ class Casino
     puts "~~~~~~~~~~~~~~~"
     puts "1) Heads or Tails"
     puts "2) Slots"
-    puts "3) Gamethree"
-    puts "4) Gamefour"
+    # puts "3) Gamethree"
+    # puts "4) Gamefour"
     puts "~~~~~~~~~~~~~~~"
     choice = gets.chomp
     submanage(choice)
   end
 
+  def quit(user)
+    puts "You have $#{user.funds}. \nGoodbye #{user.name}! See you next time!"
+  end
+
   def submanage(choice)
     case choice
     when "main"
-      mainmenu
+      mainmenu(user)
     when "quit"
-      quit
+      quit(user)
     else
       case choice.to_i
       when 1
@@ -63,10 +67,10 @@ class Casino
       when 2
         Slot_game.new(user)
         mainmenu(user)
-      when 3
-        mainmenu(user)
-      when 4
-        mainmenu(user)
+      # when 3
+      #   mainmenu(user)
+      # when 4
+      #   mainmenu(user)
       else
         puts ""
         puts "Please enter a valid option"
